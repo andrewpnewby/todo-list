@@ -14,7 +14,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RformComponent } from './rform/rform.component';
 import { MynotesComponent } from './mynotes/mynotes.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input'
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import {MatInputModule} from '@angular/material/input'
     MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

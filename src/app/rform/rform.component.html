@@ -1,8 +1,24 @@
-{{name.value}}
- <mat-form-field class="example-full-width" appearance="fill">
+<form [formGroup]="groupOfInputs">
+  <mat-form-field>
     <mat-label>Название</mat-label>
-    <input matInput placeholder="Название" 
-			    value="name" 
-			    [formControl]="name">
-
+    <input matInput placeholder="Название" formControlName="name">
   </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Выполнить до:</mat-label>
+    <input matInput [matDatepicker]="datepicker"  formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker >
+      <mat-datepicker-actions >
+        <button mat-button matDatepickerCancel>Cancel</button>
+        <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Название</mat-label>
+    <textarea matInput placeholder="Название" formControlName="whatToDo"></textarea>
+  </mat-form-field>
+  {{groupOfInputs.value.name | json}}
+</form>

@@ -7,7 +7,11 @@ import {FormGroup, FormControl} from '@angular/forms';
   styleUrls: ['./rform.component.css']
 })
 export class RformComponent implements OnInit {
-  name = new FormControl('');
+  groupOfInputs = new FormGroup({
+    name: new FormControl(''),
+    date: new FormControl(''),
+    whatToDo: new FormControl(''),
+  });
 
 
   constructor() { }
